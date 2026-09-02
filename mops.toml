@@ -1,0 +1,15 @@
+[package]
+name = "bookkeeping-ledger"
+version = "0.1.0"
+description = "Bookkeeping Ledger MCP server for the Prometheus Protocol app store — a double-entry ledger your agent posts to as money moves, with balance enforced in the canister, entries that are reversed rather than deleted, and cash accounts that reconcile against the live ICRC ledger"
+
+[dependencies]
+base = "0.16.0"
+json = "1.4.0"
+map = "9.0.1"
+http-types = "1.0.1"
+ic = "3.2.0"
+mcp-motoko-sdk = "2.0.2"
+
+[toolchain]
+moc = "0.16.0"

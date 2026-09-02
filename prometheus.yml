@@ -1,0 +1,51 @@
+# DRAFT — not submittable yet. git_commit and the visuals are placeholders until
+# src/main.mo exists and the assets are built; the namespace is not yet claimed on
+# the store. See SPEC.md.
+name: bookkeeping-ledger
+namespace: io.github.gypsychick61.bookkeeping-ledger
+title: Bookkeeping Ledger
+version: 0.1.0
+description: A double-entry ledger your agent posts to as money moves. Invoices, payments, and recurring charges become balanced entries; the canister refuses anything that doesn't balance, never deletes an entry, and reconciles cash accounts against the live ICRC ledger — so the books can prove themselves against the chain.
+category: Business
+mcp_path: /mcp
+repo_url: https://github.com/gypsychick61/bookkeeping-ledger
+payment: null
+tags: [bookkeeping, accounting, double-entry, ledger, taxes, p-and-l]
+submission:
+  name: Bookkeeping Ledger
+  description: A double-entry ledger your agent posts to as money moves. Invoices, payments, and recurring charges become balanced entries; the canister refuses anything that doesn't balance, never deletes an entry, and reconciles cash accounts against the live ICRC ledger — so the books can prove themselves against the chain.
+  publisher: gypsychick61
+  category: Business
+  deployment_type: global
+  repo_url: https://github.com/gypsychick61/bookkeeping-ledger
+  mcp_path: /mcp
+  why_this_app: >-
+    Money already moves on this store — invoices settle in ckUSDC, wallets hold
+    tokens, subscriptions pull on standing allowances — and none of it becomes
+    books. Bookkeeping is miserable for small operators for exactly one reason:
+    somebody has to transcribe events after the fact, and nobody does. That
+    premise dies when the agent that moved the money is the agent that writes the
+    entry. post_entry refuses anything where debits don't equal credits, so the
+    books cannot drift into nonsense one convenient shortcut at a time, and
+    entries are never edited or deleted — a mistake is corrected by a linked
+    reversing entry, because deletable books are worthless books. The part no
+    off-chain ledger can do is reconcile: an asset account binds to a real ICRC
+    ledger, and the canister compares what the books claim against what the chain
+    says. No money moves here on purpose. The only ledger call this server ever
+    makes is icrc1_balance_of, and it is read-only — a ledger that can also spend
+    is a ledger nobody should trust to describe its own spending.
+  key_features:
+    - Balance enforced in the canister, not suggested — every entry must have debits equal to credits, must carry at least two lines, and cannot post into a period you have closed, so back-dating into filed books fails loudly instead of quietly.
+    - Books that check themselves against the chain — link a cash account to an ICRC ledger and reconcile returns the book balance, the live on-chain balance, the signed difference, and the entries posted since, in one response.
+    - Honest history — entries are never mutated or deleted; reverse_entry posts a mirrored correction and links both directions, and the sequence number is gapless per owner so a missing entry is visible to anyone auditing it.
+    - Reads the rest of the store — invoices from Invoice Desk become revenue and receivables, renewals from Subscription Auditor become expenses, and every entry keeps a reference back to the canister and record that caused it.
+    - Never guesses a category — an expense an agent cannot classify posts to Uncategorized and surfaces in the review sweep, and close_period refuses while anything is still sitting there.
+    - Reports an accountant recognizes — profit and loss with prior-period comparison, balance sheet, trial balance, per-account running ledger, and a tax summary that states the rules it applied rather than presenting itself as advice.
+    - Hands the books to your accountant without handing over the keys — a scoped read grant with a mandatory expiry lets another principal run every report and nothing else, and it can be revoked the moment the filing is done.
+  tags: [bookkeeping, accounting, double-entry, ledger, taxes, p-and-l]
+  visuals:
+    icon_url: TODO
+    banner_url: TODO
+    gallery_images: []
+  git_commit: TODO
+  wasm_path: .dfx/local/canisters/bookkeeping_ledger/bookkeeping_ledger.wasm
