@@ -1,6 +1,3 @@
-# DRAFT — not submittable yet. git_commit and the visuals are placeholders until
-# src/main.mo exists and the assets are built; the namespace is not yet claimed on
-# the store. See SPEC.md.
 name: bookkeeping-ledger
 namespace: io.github.gypsychick61.bookkeeping-ledger
 title: Bookkeeping Ledger
@@ -44,8 +41,9 @@ submission:
     - Hands the books to your accountant without handing over the keys — a scoped read grant with a mandatory expiry lets another principal run every report and nothing else, and it can be revoked the moment the filing is done.
   tags: [bookkeeping, accounting, double-entry, ledger, taxes, p-and-l]
   visuals:
-    icon_url: TODO
-    banner_url: TODO
-    gallery_images: []
-  git_commit: TODO
+    icon_url: https://github.com/gypsychick61/bookkeeping-ledger/releases/download/v0.1.0-assets/icon-bookkeeping-ledger.webp
+    banner_url: https://github.com/gypsychick61/bookkeeping-ledger/releases/download/v0.1.0-assets/banner-bookkeeping-ledger.webp
+    gallery_images:
+      - https://github.com/gypsychick61/bookkeeping-ledger/releases/download/v0.1.0-assets/banner-bookkeeping-ledger.webp
+  git_commit: 8e3628c5a30aba56b0c14fadac202bdf7b086845
   wasm_path: .dfx/local/canisters/bookkeeping_ledger/bookkeeping_ledger.wasm
