@@ -41,9 +41,9 @@ submission:
     - Hands the books to your accountant without handing over the keys — a scoped read grant with a mandatory expiry lets another principal run every report and nothing else, and it can be revoked the moment the filing is done.
   tags: [bookkeeping, accounting, double-entry, ledger, taxes, p-and-l]
   visuals:
-    icon_url: https://github.com/gypsychick61/bookkeeping-ledger/releases/download/v0.1.0-assets/icon-bookkeeping-ledger.webp
-    banner_url: https://github.com/gypsychick61/bookkeeping-ledger/releases/download/v0.1.0-assets/banner-bookkeeping-ledger.webp
+    icon_url: https://github.com/gypsychick61/bookkeeping-ledger/releases/download/v0.1.1-assets/icon-bookkeeping-ledger.webp
+    banner_url: https://github.com/gypsychick61/bookkeeping-ledger/releases/download/v0.1.1-assets/banner-bookkeeping-ledger.webp
     gallery_images:
-      - https://github.com/gypsychick61/bookkeeping-ledger/releases/download/v0.1.0-assets/banner-bookkeeping-ledger.webp
+      - https://github.com/gypsychick61/bookkeeping-ledger/releases/download/v0.1.1-assets/banner-bookkeeping-ledger.webp
   git_commit: 8e3628c5a30aba56b0c14fadac202bdf7b086845
   wasm_path: .dfx/local/canisters/bookkeeping_ledger/bookkeeping_ledger.wasm
